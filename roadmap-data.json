@@ -1,0 +1,327 @@
+{
+  "year": 2026,
+  "launches": [
+    {
+      "month": 3,
+      "status": "approved",
+      "multi_game": false,
+      "total_games": 1,
+      "games": ["Mumbo Gumbo"],
+      "target_market": "MD Bingo Market",
+      "motherboards": {
+        "selected": ["Apex Pro", "Helix XT"]
+      },
+      "cabinets": {
+        "selected": ["Wave XL", "Curve Slant"]
+      }
+    },
+    {
+      "month": 3,
+      "status": "approved",
+      "multi_game": false,
+      "total_games": 1,
+      "games": ["Mayan Sun"],
+      "target_market": "MD Bingo Market",
+      "motherboards": {
+        "selected": ["Helix XT"]
+      },
+      "cabinets": {
+        "selected": ["Wave XL"]
+      }
+    },
+    {
+      "month": 3,
+      "status": "approved",
+      "multi_game": false,
+      "total_games": 1,
+      "games": ["SemperFI"],
+      "target_market": "MD Bingo Market",
+      "motherboards": {
+        "selected": ["Apex Pro", "Fusion Board"]
+      },
+      "cabinets": {
+        "selected": []
+      }
+    },
+    {
+      "month": 3,
+      "status": "approved",
+      "multi_game": false,
+      "total_games": 1,
+      "games": ["Zunatics"],
+      "target_market": "MD Bingo Market",
+      "motherboards": {
+        "selected": []
+      },
+      "cabinets": {
+        "selected": ["Curve Slant", "Portrait Pro"]
+      }
+    },
+    {
+      "month": 4,
+      "status": "approved",
+      "multi_game": false,
+      "total_games": 1,
+      "games": ["Outback Adventure"],
+      "target_market": "Ontario",
+      "motherboards": {
+        "selected": []
+      },
+      "cabinets": {
+        "selected": []
+      }
+    },
+    {
+      "month": 5,
+      "status": "approved",
+      "multi_game": false,
+      "total_games": 1,
+      "games": ["Prize Pirates"],
+      "target_market": "Ontario",
+      "motherboards": {
+        "selected": []
+      },
+      "cabinets": {
+        "selected": []
+      }
+    },
+    {
+      "month": 6,
+      "status": "approved",
+      "multi_game": false,
+      "total_games": 1,
+      "games": ["Outback Adventure"],
+      "target_market": "MD Bingo Market",
+      "motherboards": {
+        "selected": ["Apex Pro"]
+      },
+      "cabinets": {
+        "selected": ["Wave XL", "Curve Slant", "Portrait Pro"]
+      }
+    },
+    {
+      "month": 6,
+      "status": "approved",
+      "multi_game": false,
+      "total_games": 1,
+      "games": ["Freak Out"],
+      "target_market": "MD Bingo Market",
+      "motherboards": {
+        "selected": ["Helix XT", "Fusion Board"]
+      },
+      "cabinets": {
+        "selected": ["Wave XL"]
+      }
+    },
+    {
+      "month": 6,
+      "status": "approved",
+      "multi_game": false,
+      "total_games": 1,
+      "games": ["Bonus Factory"],
+      "target_market": "MD Bingo Market",
+      "motherboards": {
+        "selected": []
+      },
+      "cabinets": {
+        "selected": []
+      }
+    },
+    {
+      "month": 6,
+      "status": "approved",
+      "multi_game": false,
+      "total_games": 1,
+      "games": ["Frogger"],
+      "target_market": "MO Lottery",
+      "motherboards": {
+        "selected": ["Apex Pro", "Helix XT"]
+      },
+      "cabinets": {
+        "selected": ["Portrait Pro"]
+      }
+    },
+    {
+      "month": 7,
+      "status": "approved",
+      "multi_game": false,
+      "total_games": 1,
+      "games": ["Prize Pirates (IG)"],
+      "target_market": "New Mexico",
+      "motherboards": {
+        "selected": []
+      },
+      "cabinets": {
+        "selected": []
+      }
+    },
+    {
+      "month": 7,
+      "status": "approved",
+      "multi_game": false,
+      "total_games": 1,
+      "games": ["Cleopatra's Riches (CH)"],
+      "target_market": "New Mexico",
+      "motherboards": {
+        "selected": []
+      },
+      "cabinets": {
+        "selected": []
+      }
+    },
+    {
+      "month": 8,
+      "status": "approved",
+      "multi_game": false,
+      "total_games": 1,
+      "games": ["Moon Rocks"],
+      "target_market": "MD Bingo Market",
+      "motherboards": {
+        "selected": ["Fusion Board"]
+      },
+      "cabinets": {
+        "selected": ["Wave XL", "Curve Slant"]
+      }
+    },
+    {
+      "month": 8,
+      "status": "approved",
+      "multi_game": false,
+      "total_games": 1,
+      "games": ["Mars Miner"],
+      "target_market": "MD Bingo Market",
+      "motherboards": {
+        "selected": ["Helix XT"]
+      },
+      "cabinets": {
+        "selected": []
+      }
+    },
+    {
+      "month": 8,
+      "status": "approved",
+      "multi_game": false,
+      "total_games": 1,
+      "games": ["Aim High"],
+      "target_market": "MI Lottery",
+      "motherboards": {
+        "selected": ["Apex Pro", "Helix XT", "Fusion Board"]
+      },
+      "cabinets": {
+        "selected": ["Portrait Pro"]
+      }
+    },
+    {
+      "month": 8,
+      "status": "approved",
+      "multi_game": false,
+      "total_games": 1,
+      "games": ["Funday Night Football"],
+      "target_market": "Ontario",
+      "motherboards": {
+        "selected": []
+      },
+      "cabinets": {
+        "selected": []
+      }
+    },
+    {
+      "month": 10,
+      "status": "approved",
+      "multi_game": false,
+      "total_games": 1,
+      "games": ["Show Me the Piggy"],
+      "target_market": "MD Bingo Market",
+      "motherboards": {
+        "selected": ["Apex Pro"]
+      },
+      "cabinets": {
+        "selected": ["Curve Slant"]
+      }
+    },
+    {
+      "month": 10,
+      "status": "approved",
+      "multi_game": false,
+      "total_games": 1,
+      "games": ["Buffalo Rumble"],
+      "target_market": "New Mexico",
+      "motherboards": {
+        "selected": []
+      },
+      "cabinets": {
+        "selected": ["Wave XL", "Portrait Pro"]
+      }
+    },
+    {
+      "month": 10,
+      "status": "approved",
+      "multi_game": false,
+      "total_games": 1,
+      "games": ["Fiesta Grande"],
+      "target_market": "New Mexico",
+      "motherboards": {
+        "selected": []
+      },
+      "cabinets": {
+        "selected": []
+      }
+    },
+    {
+      "month": 11,
+      "status": "approved",
+      "multi_game": false,
+      "total_games": 1,
+      "games": ["One Game Family"],
+      "target_market": "Maryland ITLM",
+      "motherboards": {
+        "selected": []
+      },
+      "cabinets": {
+        "selected": []
+      }
+    },
+    {
+      "month": 11,
+      "status": "approved",
+      "multi_game": false,
+      "total_games": 1,
+      "games": ["Show Me The Piggy"],
+      "target_market": "Ontario",
+      "motherboards": {
+        "selected": []
+      },
+      "cabinets": {
+        "selected": []
+      }
+    },
+    {
+      "month": 11,
+      "status": "approved",
+      "multi_game": false,
+      "total_games": 1,
+      "games": ["Royal Spirits"],
+      "target_market": "Ontario",
+      "motherboards": {
+        "selected": []
+      },
+      "cabinets": {
+        "selected": []
+      }
+    },
+    {
+      "month": 12,
+      "status": "approved",
+      "multi_game": false,
+      "total_games": 1,
+      "games": ["Buffalo Rumble"],
+      "target_market": "MO Lottery",
+      "motherboards": {
+        "selected": []
+      },
+      "cabinets": {
+        "selected": []
+      }
+    }
+  ]
+}

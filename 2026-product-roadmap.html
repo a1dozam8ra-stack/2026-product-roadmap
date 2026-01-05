@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Product Roadmap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Overpass', sans-serif;
+            background-color: #FFFFFF;
+            color: #274C77;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #6096BA;
+        }
+
+        .header h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: #274C77;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #6096BA;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 50px;
+            padding: 20px;
+            background-color: #F8F9FA;
+            border-radius: 8px;
+        }
+
+        .filter-btn {
+            padding: 12px 24px;
+            background-color: #FFFFFF;
+            color: #274C77;
+            border: 2px solid #6096BA;
+            border-radius: 6px;
+            font-family: 'Overpass', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-transform: none;
+        }
+
+        .filter-btn:hover {
+            background-color: #A3CEF1;
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background-color: #6096BA;
+            color: #FFFFFF;
+        }
+
+        .filter-btn:focus {
+            outline: 2px solid #274C77;
+            outline-offset: 2px;
+        }
+
+        /* Search Container */
+        .search-container {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto 40px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 14px 50px 14px 20px;
+            font-family: 'Overpass', sans-serif;
+            font-size: 1rem;
+            color: #274C77;
+            background-color: #FFFFFF;
+            border: 2px solid #6096BA;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #274C77;
+            box-shadow: 0 0 0 3px rgba(96, 150, 186, 0.2);
+        }
+
+        .search-input::placeholder {
+            color: #6096BA;
+            opacity: 0.7;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        /* Month Section */
+        .month-section {
+            margin-bottom: 60px;
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .month-header {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #6096BA;
+        }
+
+        .month-name {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #274C77;
+        }
+
+        .launch-count {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #6096BA;
+            padding: 4px 12px;
+            background-color: #E7ECEF;
+            border-radius: 20px;
+        }
+
+        /* Game Cards */
+        .game-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .game-card {
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(39, 76, 119, 0.12);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 0.4s ease forwards;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .game-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(39, 76, 119, 0.18);
+        }
+
+        /* Section 1: Target Market */
+        .card-section-market {
+            padding: 24px 28px;
+            border-bottom: 1px solid rgba(96, 150, 186, 0.2);
+        }
+
+        /* Section 2: Game Title */
+        .card-section-title {
+            padding: 28px;
+            border-bottom: 1px solid rgba(96, 150, 186, 0.2);
+            position: relative;
+        }
+
+        /* Section 3: Details Grid */
+        .card-section-details {
+            padding: 24px 28px;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #6096BA;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        .section-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #274C77;
+        }
+
+        .game-title-value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #274C77;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+
+        .status-badge {
+            position: absolute;
+            top: 28px;
+            right: 28px;
+            padding: 6px 14px;
+            background-color: rgba(40, 167, 69, 0.1);
+            color: #28A745;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            border: 1px solid #28A745;
+        }
+
+        /* Details Grid */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+        }
+
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .multi-theme-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #274C77;
+        }
+
+        .hardware-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .hardware-list li {
+            font-size: 0.85rem;
+            color: #274C77;
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .hardware-list li::before {
+            content: "•";
+            color: #6096BA;
+            font-weight: 700;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6096BA;
+        }
+
+        .empty-state p {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* Responsive Adjustments for SharePoint Embedding */
+        @media (max-width: 900px) {
+            .container {
+                max-width: 100%;
+            }
+
+            .header h1 {
+                font-size: 3.5rem;
+            }
+
+            .filter-bar {
+                gap: 10px;
+            }
+
+            .filter-btn {
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+
+            .search-container {
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .header h1 {
+                font-size: 2.8rem;
+            }
+
+            .header .subtitle {
+                font-size: 1rem;
+                letter-spacing: 2px;
+            }
+
+            .month-name {
+                font-size: 2rem;
+            }
+
+            .game-title-value {
+                font-size: 1.5rem;
+            }
+
+            .card-section-market,
+            .card-section-details {
+                padding: 20px 24px;
+            }
+
+            .card-section-title {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>2026</h1>
+            <div class="subtitle">Product Roadmap</div>
+        </header>
+
+        <div class="filter-bar" role="toolbar" aria-label="Filter by market">
+            <button class="filter-btn active" data-market="all" aria-pressed="true">All Markets</button>
+            <button class="filter-btn" data-market="MD Bingo Market" aria-pressed="false">MD Bingo Market</button>
+            <button class="filter-btn" data-market="Ontario" aria-pressed="false">Ontario</button>
+            <button class="filter-btn" data-market="New Mexico" aria-pressed="false">New Mexico</button>
+            <button class="filter-btn" data-market="MO Lottery" aria-pressed="false">MO Lottery</button>
+            <button class="filter-btn" data-market="MI Lottery" aria-pressed="false">MI Lottery</button>
+            <button class="filter-btn" data-market="Maryland ITLM" aria-pressed="false">Maryland ITLM</button>
+        </div>
+
+        <div class="search-container">
+            <input 
+                type="text" 
+                id="game-search" 
+                class="search-input" 
+                placeholder="Search by game name..."
+                aria-label="Search games by name"
+            >
+            <span class="search-icon">🔍</span>
+        </div>
+
+        <div id="timeline-container"></div>
+    </div>
+
+    <script>
+        // Data Source
+        const roadmapData = {
+            year: 2026,
+            launches: [
+                // March
+                {
+                    month: 3,
+                    status: "approved",
+                    multi_game: false,
+                    total_games: 1,
+                    games: ["Mumbo Gumbo"],
+                    target_market: "MD Bingo Market",
+                    motherboards: { selected: ["Apex Pro", "Helix XT"] },
+                    cabinets: { selected: ["Wave XL", "Curve Slant"] }
+                },
+                {
+                    month: 3,
+                    status: "approved",
+                    multi_game: false,
+                    total_games: 1,
+                    games: ["Mayan Sun"],
+                    target_market: "MD Bingo Market",
+                    motherboards: { selected: ["Helix XT"] },
+                    cabinets: { selected: ["Wave XL"] }
+                },
+                {
+                    month: 3,
+                    status: "approved",
+                    multi_game: false,
+                    total_games: 1,
+                    games: ["SemperFI"],
+                    target_market: "MD Bingo Market",
+                    motherboards: { selected: ["Apex Pro", "Fusion Board"] },
+                    cabinets: { selected: [] }
+                },
+                {
+                    month: 3,
+                    status: "approved",
+                    multi_game: false,
+                    total_games: 1,
+                    games: ["Zunatics"],
+                    target_market: "MD Bingo Market",
+                    motherboards: { selected: [] },
+                    cabinets: { selected: ["Curve Slant", "Portrait Pro"] }
+                },
+                // April
+                {
+                    month: 4,
+                    status: "approved",
+                    multi_game: false,
+                    total_games: 1,
+                    games: ["Outback Adventure"],
+                    target_market: "Ontario",
+                    motherboards: { selected: [] },
+                    cabinets: { selected: [] }
+                },
+                // May
+                {
+                    month: 5,
+                    status: "approved",
+                    multi_game: false,
+                    total_games: 1,
+                    games: ["Prize Pirates"],
+                    target_market: "Ontario",
+                    motherboards: { selected: [] },
+                    cabinets: { selected: [] }
+                },
+                // June
+                {
+                    month: 6,
+                    status: "approved",
+                    multi_game: false,
+                    total_games: 1,
+                    games: ["Outback Adventure"],
+                    target_market: "MD Bingo Market",
+                    motherboards: { selected: ["Apex Pro"] },
+                    cabinets: { selected: ["Wave XL", "Curve Slant", "Portrait Pro"] }
+                },
+                {
+                    month: 6,
+                    status: "approved",
+                    multi_game: false,
+                    total_games: 1,
+                    games: ["Freak Out"],
+                    target_market: "MD Bingo Market",
+                    motherboards: { selected: ["Helix XT", "Fusion Board"] },
+                    cabinets: { selected: ["Wave XL"] }
+                },
+                {
+                    month: 6,
+                    status: "approved",
+                    multi_game: false,
+                    total_games: 1,
+                    games: ["Bonus Factory"],
+                    target_market: "MD Bingo Market",
+                    motherboards: { selected: [] },
+                    cabinets: { selected: [] }
+                },
+                {
+                    month: 6,
+                    status: "approved",
+                    multi_game: false,
+                    total_games: 1,
+                    games: ["Frogger"],
+                    target_market: "MO Lottery",
+                    motherboards: { selected: ["Apex Pro", "Helix XT"] },
+                    cabinets: { selected: ["Portrait Pro"] }
+                },
+                // July
+                {
+                    month: 7,
+                    status: "approved",
+                    multi_game: false,
+                    total_games: 1,
+                    games: ["Prize Pirates (IG)"],
+                    target_market: "New Mexico",
+                    motherboards: { selected: [] },
+                    cabinets: { selected: [] }
+                },
+                {
+                    month: 7,
+                    status: "approved",
+                    multi_game: false,
+                    total_games: 1,
+                    games: ["Cleopatra's Riches (CH)"],
+                    target_market: "New Mexico",
+                    motherboards: { selected: [] },
+                    cabinets: { selected: [] }
+                },
+                // August
+                {
+                    month: 8,
+                    status: "approved",
+                    multi_game: false,
+                    total_games: 1,
+                    games: ["Moon Rocks"],
+                    target_market: "MD Bingo Market",
+                    motherboards: { selected: ["Fusion Board"] },
+                    cabinets: { selected: ["Wave XL", "Curve Slant"] }
+                },
+                {
+                    month: 8,
+                    status: "approved",
+                    multi_game: false,
+                    total_games: 1,
+                    games: ["Mars Miner"],
+                    target_market: "MD Bingo Market",
+                    motherboards: { selected: ["Helix XT"] },
+                    cabinets: { selected: [] }
+                },
+                {
+                    month: 8,
+                    status: "approved",
+                    multi_game: false,
+                    total_games: 1,
+                    games: ["Aim High"],
+                    target_market: "MI Lottery",
+                    motherboards: { selected: ["Apex Pro", "Helix XT", "Fusion Board"] },
+                    cabinets: { selected: ["Portrait Pro"] }
+                },
+                {
+                    month: 8,
+                    status: "approved",
+                    multi_game: false,
+                    total_games: 1,
+                    games: ["Funday Night Football"],
+                    target_market: "Ontario",
+                    motherboards: { selected: [] },
+                    cabinets: { selected: [] }
+                },
+                // October
+                {
+                    month: 10,
+                    status: "approved",
+                    multi_game: false,
+                    total_games: 1,
+                    games: ["Show Me the Piggy"],
+                    target_market: "MD Bingo Market",
+                    motherboards: { selected: ["Apex Pro"] },
+                    cabinets: { selected: ["Curve Slant"] }
+                },
+                {
+                    month: 10,
+                    status: "approved",
+                    multi_game: false,
+                    total_games: 1,
+                    games: ["Buffalo Rumble"],
+                    target_market: "New Mexico",
+                    motherboards: { selected: [] },
+                    cabinets: { selected: ["Wave XL", "Portrait Pro"] }
+                },
+                {
+                    month: 10,
+                    status: "approved",
+                    multi_game: false,
+                    total_games: 1,
+                    games: ["Fiesta Grande"],
+                    target_market: "New Mexico",
+                    motherboards: { selected: [] },
+                    cabinets: { selected: [] }
+                },
+                // November
+                {
+                    month: 11,
+                    status: "approved",
+                    multi_game: false,
+                    total_games: 1,
+                    games: ["One Game Family"],
+                    target_market: "Maryland ITLM",
+                    motherboards: { selected: [] },
+                    cabinets: { selected: [] }
+                },
+                {
+                    month: 11,
+                    status: "approved",
+                    multi_game: false,
+                    total_games: 1,
+                    games: ["Show Me The Piggy"],
+                    target_market: "Ontario",
+                    motherboards: { selected: [] },
+                    cabinets: { selected: [] }
+                },
+                {
+                    month: 11,
+                    status: "approved",
+                    multi_game: false,
+                    total_games: 1,
+                    games: ["Royal Spirits"],
+                    target_market: "Ontario",
+                    motherboards: { selected: [] },
+                    cabinets: { selected: [] }
+                },
+                // December
+                {
+                    month: 12,
+                    status: "approved",
+                    multi_game: false,
+                    total_games: 1,
+                    games: ["Buffalo Rumble"],
+                    target_market: "MO Lottery",
+                    motherboards: { selected: [] },
+                    cabinets: { selected: [] }
+                }
+            ]
+        };
+
+        const monthNames = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+
+        // Calculate launch counts per market
+        function calculateMarketCounts() {
+            const data = loadRoadmapData();
+            const counts = {};
+            
+            data.launches.forEach(launch => {
+                const market = launch.target_market;
+                if (!counts[market]) {
+                    counts[market] = 0;
+                }
+                // Count individual games
+                if (launch.multi_game && launch.games.length > 1) {
+                    counts[market] += launch.games.length;
+                } else {
+                    counts[market] += 1;
+                }
+            });
+            
+            return counts;
+        }
+
+        // Update filter button labels with counts
+        function updateFilterCounts() {
+            const counts = calculateMarketCounts();
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            let totalCount = 0;
+            
+            // Calculate total
+            Object.values(counts).forEach(count => totalCount += count);
+            
+            filterButtons.forEach(button => {
+                const market = button.dataset.market;
+                const originalText = button.textContent.split(' (')[0]; // Remove existing count if any
+                
+                if (market === 'all') {
+                    button.textContent = `All Markets (${totalCount})`;
+                } else if (counts[market]) {
+                    button.textContent = `${originalText} (${counts[market]})`;
+                } else {
+                    button.textContent = `${originalText} (0)`;
+                }
+            });
+        }
+
+        function loadRoadmapData() {
+            return roadmapData;
+        }
+
+        function renderTimeline(filterMarket = 'all', searchQuery = '') {
+            const data = loadRoadmapData();
+            const container = document.getElementById('timeline-container');
+            
+            // Normalize search query
+            const normalizedSearch = searchQuery.toLowerCase().trim();
+            
+            // Group launches by month
+            const launchesByMonth = {};
+            
+            data.launches.forEach(launch => {
+                // Apply market filter
+                if (filterMarket !== 'all' && launch.target_market !== filterMarket) {
+                    return;
+                }
+
+                if (!launchesByMonth[launch.month]) {
+                    launchesByMonth[launch.month] = [];
+                }
+                
+                // Handle multi-game launches
+                if (launch.multi_game && launch.games.length > 1) {
+                    launch.games.forEach(gameName => {
+                        // Apply search filter
+                        if (normalizedSearch && !gameName.toLowerCase().includes(normalizedSearch)) {
+                            return;
+                        }
+                        launchesByMonth[launch.month].push({
+                            ...launch,
+                            gameName: gameName
+                        });
+                    });
+                } else {
+                    const gameName = launch.games[0];
+                    // Apply search filter
+                    if (normalizedSearch && !gameName.toLowerCase().includes(normalizedSearch)) {
+                        return;
+                    }
+                    launchesByMonth[launch.month].push({
+                        ...launch,
+                        gameName: gameName
+                    });
+                }
+            });
+
+            // Clear container
+            container.innerHTML = '';
+
+            // Check if we have any results
+            const monthKeys = Object.keys(launchesByMonth).sort((a, b) => a - b);
+            
+            if (monthKeys.length === 0) {
+                const message = normalizedSearch 
+                    ? `No games found matching "${searchQuery}"`
+                    : 'No launches found for the selected market.';
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <p>${message}</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Render each month section
+            monthKeys.forEach((monthNum, sectionIndex) => {
+                const monthIndex = parseInt(monthNum) - 1;
+                const monthName = monthNames[monthIndex];
+                const launches = launchesByMonth[monthNum];
+                
+                const monthSection = document.createElement('div');
+                monthSection.className = 'month-section';
+                monthSection.style.animationDelay = `${sectionIndex * 0.1}s`;
+                
+                monthSection.innerHTML = `
+                    <div class="month-header">
+                        <h2 class="month-name">${monthName}</h2>
+                        <span class="launch-count">${launches.length} ${launches.length === 1 ? 'launch' : 'launches'}</span>
+                    </div>
+                    <div class="game-list">
+                        ${launches.map((launch, cardIndex) => renderGameCard(launch, cardIndex)).join('')}
+                    </div>
+                `;
+                
+                container.appendChild(monthSection);
+            });
+        }
+
+        function renderGameCard(launch, index) {
+            const multiThemeValue = launch.multi_game ? 'Yes' : 'No';
+            const statusBadge = launch.status === 'approved' 
+                ? '<div class="status-badge">Approved</div>' 
+                : '';
+
+            // Hardware sections (only render if there are items)
+            const hasMotherboards = launch.motherboards.selected && launch.motherboards.selected.length > 0;
+            const hasCabinets = launch.cabinets.selected && launch.cabinets.selected.length > 0;
+
+            let hardwareHTML = '';
+            
+            if (hasMotherboards) {
+                hardwareHTML += `
+                    <div class="detail-item">
+                        <div class="section-label">Motherboard(s)</div>
+                        <ul class="hardware-list">
+                            ${launch.motherboards.selected.map(mb => `<li>${mb}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+
+            if (hasCabinets) {
+                hardwareHTML += `
+                    <div class="detail-item">
+                        <div class="section-label">Cabinet(s)</div>
+                        <ul class="hardware-list">
+                            ${launch.cabinets.selected.map(cab => `<li>${cab}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+
+            return `
+                <div class="game-card" style="animation-delay: ${index * 0.05}s">
+                    <!-- Section 1: Market -->
+                    <div class="card-section-market">
+                        ${statusBadge}
+                        <div class="section-label">Market</div>
+                        <div class="section-value">${launch.target_market}</div>
+                    </div>
+                    
+                    <!-- Section 2: Game Title -->
+                    <div class="card-section-title">
+                        <div class="section-label">Game Title</div>
+                        <div class="game-title-value">${launch.gameName}</div>
+                    </div>
+                    
+                    <!-- Section 3: Details Grid -->
+                    <div class="card-section-details">
+                        <div class="details-grid">
+                            <div class="detail-item">
+                                <div class="section-label">Multi-Theme</div>
+                                <div class="multi-theme-value">${multiThemeValue}</div>
+                            </div>
+                            ${hardwareHTML}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Filter functionality
+        let currentMarket = 'all';
+        let currentSearch = '';
+
+        function initializeFilters() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active state
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.setAttribute('aria-pressed', 'false');
+                    });
+                    this.classList.add('active');
+                    this.setAttribute('aria-pressed', 'true');
+                    
+                    // Update current market and render
+                    currentMarket = this.dataset.market;
+                    renderTimeline(currentMarket, currentSearch);
+                });
+
+                // Keyboard accessibility
+                button.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
+            });
+        }
+
+        function initializeSearch() {
+            const searchInput = document.getElementById('game-search');
+            
+            // Real-time search with debounce
+            let searchTimeout;
+            searchInput.addEventListener('input', function() {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    currentSearch = this.value;
+                    renderTimeline(currentMarket, currentSearch);
+                }, 300); // 300ms debounce
+            });
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateFilterCounts();
+            renderTimeline();
+            initializeFilters();
+            initializeSearch();
+        });
+    </script>
+</body>
+</html>
