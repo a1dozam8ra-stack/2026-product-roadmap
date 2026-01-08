@@ -4,29 +4,19 @@
     {
       "month": 3,
       "status": "approved",
-      "multi_game": false,
-      "total_games": 1,
-      "games": ["Mumbo Gumbo"],
+      "multi_game": true,
+      "total_games": 3,
+      "games": [
+        "Mumbo Gumbo",
+        "Mayan Sun",
+        "Zunatics"
+      ],
       "target_market": "MD Bingo Market",
       "motherboards": {
-        "selected": ["Apex Pro", "Helix XT"]
+        "selected": ["ASRock"]
       },
       "cabinets": {
-        "selected": ["Wave XL", "Curve Slant"]
-      }
-    },
-    {
-      "month": 3,
-      "status": "approved",
-      "multi_game": false,
-      "total_games": 1,
-      "games": ["Mayan Sun"],
-      "target_market": "MD Bingo Market",
-      "motherboards": {
-        "selected": ["Helix XT"]
-      },
-      "cabinets": {
-        "selected": ["Wave XL"]
+        "selected": ["ICON", "Titanium", "iOlite"]
       }
     },
     {
@@ -44,20 +34,6 @@
       }
     },
     {
-      "month": 3,
-      "status": "approved",
-      "multi_game": false,
-      "total_games": 1,
-      "games": ["Zunatics"],
-      "target_market": "MD Bingo Market",
-      "motherboards": {
-        "selected": []
-      },
-      "cabinets": {
-        "selected": ["Curve Slant", "Portrait Pro"]
-      }
-    },
-    {
       "month": 4,
       "status": "approved",
       "multi_game": false,
@@ -65,10 +41,10 @@
       "games": ["Outback Adventure"],
       "target_market": "Ontario",
       "motherboards": {
-        "selected": []
+        "selected": ["ASRock"]
       },
       "cabinets": {
-        "selected": []
+        "selected": ["ICON", "Titanium", "iOlite"]
       }
     },
     {
@@ -79,10 +55,10 @@
       "games": ["Prize Pirates"],
       "target_market": "Ontario",
       "motherboards": {
-        "selected": []
+        "selected": ["ASRock"]
       },
       "cabinets": {
-        "selected": []
+        "selected": ["ICON", "Titanium", "iOlite"]
       }
     },
     {
@@ -93,10 +69,10 @@
       "games": ["Outback Adventure"],
       "target_market": "MD Bingo Market",
       "motherboards": {
-        "selected": ["Apex Pro"]
+        "selected": ["ASRock"]
       },
       "cabinets": {
-        "selected": ["Wave XL", "Curve Slant", "Portrait Pro"]
+        "selected": ["ICON", "Titanium", "iOlite"]
       }
     },
     {
@@ -149,10 +125,10 @@
       "games": ["Prize Pirates (IG)"],
       "target_market": "New Mexico",
       "motherboards": {
-        "selected": []
+        "selected": ["ASRock"]
       },
       "cabinets": {
-        "selected": []
+        "selected": ["Titanium"]
       }
     },
     {
@@ -219,10 +195,10 @@
       "games": ["Funday Night Football"],
       "target_market": "Ontario",
       "motherboards": {
-        "selected": []
+        "selected": ["ASRock"]
       },
       "cabinets": {
-        "selected": []
+        "selected": ["ICON", "Titanium", "iOlite"]
       }
     },
     {
@@ -233,10 +209,10 @@
       "games": ["Show Me the Piggy"],
       "target_market": "MD Bingo Market",
       "motherboards": {
-        "selected": ["Apex Pro"]
+        "selected": ["ASRock"]
       },
       "cabinets": {
-        "selected": ["Curve Slant"]
+        "selected": ["ICON", "Titanium", "iOlite"]
       }
     },
     {
@@ -286,13 +262,13 @@
       "status": "approved",
       "multi_game": false,
       "total_games": 1,
-      "games": ["Show Me The Piggy"],
+      "games": ["Show Me the Piggy"],
       "target_market": "Ontario",
       "motherboards": {
-        "selected": []
+        "selected": ["ASRock"]
       },
       "cabinets": {
-        "selected": []
+        "selected": ["ICON", "Titanium", "iOlite"]
       }
     },
     {
