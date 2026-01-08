@@ -319,6 +319,119 @@
             font-weight: 600;
         }
 
+        /* Collapsible Checklist Section */
+        .checklist-section {
+            border-top: 1px solid rgba(96, 150, 186, 0.2);
+        }
+
+        .checklist-toggle {
+            width: 100%;
+            padding: 20px 28px;
+            background-color: #F8F9FA;
+            border: none;
+            font-family: 'Overpass', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #274C77;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.25s ease;
+        }
+
+        .checklist-toggle:hover {
+            background-color: #E7ECEF;
+        }
+
+        .checklist-toggle-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .checklist-toggle.active .checklist-toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .checklist-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background-color: #FFFFFF;
+        }
+
+        .checklist-content.active {
+            max-height: 5000px;
+        }
+
+        .checklist-inner {
+            padding: 24px 28px;
+        }
+
+        .checklist-category {
+            margin-bottom: 24px;
+        }
+
+        .checklist-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .checklist-category-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #6096BA;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(96, 150, 186, 0.2);
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            color: #274C77;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            margin-top: 3px;
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        .checklist-item label {
+            cursor: pointer;
+            line-height: 1.4;
+        }
+
+        .checklist-notes {
+            margin-top: 12px;
+        }
+
+        .checklist-notes textarea {
+            width: 100%;
+            min-height: 60px;
+            padding: 10px;
+            font-family: 'Overpass', sans-serif;
+            font-size: 0.85rem;
+            color: #274C77;
+            border: 1px solid #6096BA;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        .checklist-notes textarea:focus {
+            outline: none;
+            border-color: #274C77;
+            box-shadow: 0 0 0 2px rgba(96, 150, 186, 0.2);
+        }
+
         /* Responsive Adjustments for SharePoint Embedding */
         @media (max-width: 900px) {
             .container {
@@ -636,8 +749,260 @@
                             ${hardwareHTML}
                         </div>
                     </div>
+                    
+                    <!-- Section 4: Release Checklist -->
+                    <div class="checklist-section">
+                        <button class="checklist-toggle" onclick="toggleChecklist(this)">
+                            <span>Release Checklist</span>
+                            <span class="checklist-toggle-icon">▼</span>
+                        </button>
+                        <div class="checklist-content">
+                            <div class="checklist-inner">
+                                
+                                <!-- 1. Assets & Content Readiness -->
+                                <div class="checklist-category">
+                                    <div class="checklist-category-title">1. Assets & Content Readiness</div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="asset-images-${index}">
+                                        <label for="asset-images-${index}">All required images prepared (logos, screenshots, marketing images)</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="asset-video-${index}">
+                                        <label for="asset-video-${index}">Gameplay/video capture available (if required)</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="asset-formats-${index}">
+                                        <label for="asset-formats-${index}">Asset formats meet market/regulatory specs</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="asset-reviewed-${index}">
+                                        <label for="asset-reviewed-${index}">Assets reviewed for accuracy vs. final game behavior</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="asset-approved-${index}">
+                                        <label for="asset-approved-${index}">Assets approved for submission and internal use</label>
+                                    </div>
+                                    <div class="checklist-notes">
+                                        <textarea placeholder="Notes..."></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- 2. Product Readiness -->
+                                <div class="checklist-category">
+                                    <div class="checklist-category-title">2. Product Readiness</div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="product-overview-${index}">
+                                        <label for="product-overview-${index}">Product Overview is complete and approved</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="product-gameplay-${index}">
+                                        <label for="product-gameplay-${index}">Core gameplay, features, and mechanics finalized</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="product-requirements-${index}">
+                                        <label for="product-requirements-${index}">Market-specific requirements confirmed</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="product-alignment-${index}">
+                                        <label for="product-alignment-${index}">Stakeholder alignment confirmed (no open product questions)</label>
+                                    </div>
+                                    <div class="checklist-notes">
+                                        <textarea placeholder="Notes..."></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- 3. Market Product Submission & Approval -->
+                                <div class="checklist-category">
+                                    <div class="checklist-category-title">3. Market Product Submission & Approval (Pre-QA)</div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="submission-prepared-${index}">
+                                        <label for="submission-prepared-${index}">Product submission prepared per market</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="submission-materials-${index}">
+                                        <label for="submission-materials-${index}">Required materials sent (overview, assets, videos, demos)</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="submission-feedback-${index}">
+                                        <label for="submission-feedback-${index}">Market questions or feedback addressed</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="submission-approval-${index}">
+                                        <label for="submission-approval-${index}">Formal market approval received and documented</label>
+                                    </div>
+                                    <div class="checklist-notes">
+                                        <textarea placeholder="Notes..."></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- 4. Math Request & Approval -->
+                                <div class="checklist-category">
+                                    <div class="checklist-category-title">4. Math Request & Approval</div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="math-request-${index}">
+                                        <label for="math-request-${index}">Math request submitted with all required details</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="math-approved-${index}">
+                                        <label for="math-approved-${index}">Math approved by Math Owner</label>
+                                    </div>
+                                    <div class="checklist-notes">
+                                        <textarea placeholder="Notes (RTP, prize structure, etc.)..."></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- 5. ADO Requirements & Documentation -->
+                                <div class="checklist-category">
+                                    <div class="checklist-category-title">5. ADO Requirements & Documentation</div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="ado-items-${index}">
+                                        <label for="ado-items-${index}">ADO work items created or updated</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="ado-criteria-${index}">
+                                        <label for="ado-criteria-${index}">Acceptance criteria reflect approved math and product</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="ado-requirements-${index}">
+                                        <label for="ado-requirements-${index}">Requirements aligned to market-approved submission</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="ado-dependencies-${index}">
+                                        <label for="ado-dependencies-${index}">Dependencies and risks documented</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="ado-linked-${index}">
+                                        <label for="ado-linked-${index}">Work items linked to release / sprint / epic</label>
+                                    </div>
+                                    <div class="checklist-notes">
+                                        <textarea placeholder="Notes..."></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- 6. QA Handoff -->
+                                <div class="checklist-category">
+                                    <div class="checklist-category-title">6. QA Handoff</div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="qa-documentation-${index}">
+                                        <label for="qa-documentation-${index}">QA documentation prepared</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="qa-build-${index}">
+                                        <label for="qa-build-${index}">Build version and feature list confirmed</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="qa-risks-${index}">
+                                        <label for="qa-risks-${index}">Known risks or edge cases communicated</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="qa-kickoff-${index}">
+                                        <label for="qa-kickoff-${index}">QA kickoff completed</label>
+                                    </div>
+                                    <div class="checklist-notes">
+                                        <textarea placeholder="Notes..."></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- 7. Internal QA Support -->
+                                <div class="checklist-category">
+                                    <div class="checklist-category-title">7. Internal QA Support</div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="qa-questions-${index}">
+                                        <label for="qa-questions-${index}">Product questions from QA answered</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="qa-decisions-${index}">
+                                        <label for="qa-decisions-${index}">Product decisions made on issues</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="qa-scope-${index}">
+                                        <label for="qa-scope-${index}">Scope changes assessed and approved/denied</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="qa-pass-${index}">
+                                        <label for="qa-pass-${index}">QA pass confirmation received</label>
+                                    </div>
+                                    <div class="checklist-notes">
+                                        <textarea placeholder="Notes..."></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- 8. Market Certification & Approval -->
+                                <div class="checklist-category">
+                                    <div class="checklist-category-title">8. Market-Specific Certification & Approval</div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="cert-submission-${index}">
+                                        <label for="cert-submission-${index}">Submitted to appropriate lab/regulatory body</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="cert-uat-${index}">
+                                        <label for="cert-uat-${index}">UAT completed (if applicable)</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="cert-approval-${index}">
+                                        <label for="cert-approval-${index}">Final certification/approval received</label>
+                                    </div>
+                                    <div class="checklist-notes">
+                                        <textarea placeholder="Notes (lab, certification details, etc.)..."></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- 9. Market Release Readiness -->
+                                <div class="checklist-category">
+                                    <div class="checklist-category-title">9. Market Release Readiness</div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="release-build-${index}">
+                                        <label for="release-build-${index}">Final approved build confirmed</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="release-date-${index}">
+                                        <label for="release-date-${index}">Release date aligned with operations</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="release-notes-${index}">
+                                        <label for="release-notes-${index}">Release notes / internal communication prepared</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="release-live-${index}">
+                                        <label for="release-live-${index}">Game marked Live on roadmap/dashboard</label>
+                                    </div>
+                                    <div class="checklist-notes">
+                                        <textarea placeholder="Notes..."></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- 10. Post-Release Wrap-Up -->
+                                <div class="checklist-category">
+                                    <div class="checklist-category-title">10. Post-Release Wrap-Up</div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="post-issues-${index}">
+                                        <label for="post-issues-${index}">Post-launch issues reviewed</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="post-learnings-${index}">
+                                        <label for="post-learnings-${index}">Learnings documented</label>
+                                    </div>
+                                    <div class="checklist-item">
+                                        <input type="checkbox" id="post-archived-${index}">
+                                        <label for="post-archived-${index}">Checklist archived</label>
+                                    </div>
+                                    <div class="checklist-notes">
+                                        <textarea placeholder="Notes..."></textarea>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             `;
+        }
+
+        // Toggle checklist visibility
+        function toggleChecklist(button) {
+            button.classList.toggle('active');
+            const content = button.nextElementSibling;
+            content.classList.toggle('active');
         }
 
         // Filter functionality
