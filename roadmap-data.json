@@ -9,7 +9,8 @@
       "games": [
         "Mumbo Gumbo",
         "Mayan Sun",
-        "Zunatics"
+        "Zunatics",
+		"SemperFI"
       ],
       "target_market": "MD Bingo Market",
       "motherboards": {
@@ -17,20 +18,6 @@
       },
       "cabinets": {
         "selected": ["ICON", "Titanium", "iOlite"]
-      }
-    },
-    {
-      "month": 3,
-      "status": "approved",
-      "multi_game": false,
-      "total_games": 1,
-      "games": ["SemperFI"],
-      "target_market": "MD Bingo Market",
-      "motherboards": {
-        "selected": ["Apex Pro", "Fusion Board"]
-      },
-      "cabinets": {
-        "selected": []
       }
     },
     {
